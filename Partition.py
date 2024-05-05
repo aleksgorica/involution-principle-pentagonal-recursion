@@ -1,5 +1,5 @@
 from collections.abc import Sequence
-from typing import List
+from typing import List, Tuple
 
 class Partition(Sequence):
     def __init__(self,parts: List[int] = []):
@@ -143,7 +143,7 @@ class PartitionPair:
     def franklin_involution(self) -> bool:
         return self.partition1.franklin_involution()
     
-    def principle(self, printout=False) -> "PartitionPair":
+    def principle(self, printout=False) -> Tuple[int ,"PartitionPair"]:
         i, el = 0, None
         for i, el in enumerate(self.principle_generator()):
             if printout: print(i, el)
